@@ -23,8 +23,14 @@ namespace grades
         public MainWindow()
         {
             InitializeComponent();
-            gradeInput.Focus(); // place focus in gradeInput textbox
-            gradeInput.SelectAll(); // select gradeInput textbox text
+            selectText();
+        }
+
+        // Select input box text
+        private void selectText()
+        {
+            gradeInput.Focus();
+            gradeInput.SelectAll();
         }
 
         // Display letter grade
@@ -32,8 +38,7 @@ namespace grades
         {
             gradeResult.Foreground = new SolidColorBrush(Colors.Black);
             gradeResult.Text = ("Your grade is: " + letterGrade);
-            gradeInput.Focus();
-            gradeInput.SelectAll();
+            selectText();
         }
 
         // Display Error Message
@@ -42,8 +47,7 @@ namespace grades
             gradeResult.Foreground = new SolidColorBrush(Colors.Red);
             gradeResult.Text = "Numeric grade required between 0 and 100.";
             gradeInput.Text = "Enter Numeric Grade"; // reset gradeInput.Text text
-            gradeInput.Focus();
-            gradeInput.SelectAll();
+            selectText();
         }
 
         // Determine letter grade from numeric value
