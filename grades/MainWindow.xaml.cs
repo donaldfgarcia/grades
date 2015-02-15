@@ -17,7 +17,6 @@ namespace grades
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
-    /// some changes for GIT
     /// </summary>
     public partial class MainWindow : Window
     {
