@@ -30,8 +30,8 @@ namespace grades
         // Display letter grade
         private void DisplayMessage(String letterGrade)
         {
+            gradeResult.Foreground = new SolidColorBrush(Colors.Black);
             gradeResult.Text = ("Your grade is: " + letterGrade);
-            errorMessage.Visibility = System.Windows.Visibility.Hidden; // hide error message
             gradeInput.Focus();
             gradeInput.SelectAll();
         }
@@ -39,9 +39,8 @@ namespace grades
         // Display Error Message
         private void DisplayError()
         {
-            gradeResult.Text = "";
-            errorMessage.Visibility = System.Windows.Visibility.Visible; // error message visible
-            errorMessage.Text = "Numeric grade required between 0 and 100.";
+            gradeResult.Foreground = new SolidColorBrush(Colors.Red);
+            gradeResult.Text = "Numeric grade required between 0 and 100.";
             gradeInput.Text = "Enter Numeric Grade"; // reset gradeInput.Text text
             gradeInput.Focus();
             gradeInput.SelectAll();
